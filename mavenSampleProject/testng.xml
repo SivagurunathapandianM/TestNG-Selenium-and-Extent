@@ -1,0 +1,26 @@
+<suite name="Group of group Suite" verbose="1">
+	<parameter name="OS" value="Windows" />
+	<parameter name="browser" value="Chrome" />
+	<test name="FunctionalTesting">
+		<classes>
+			<class name="com.sampleproject.mavenSampleProject.AppTest" />
+		</classes>
+	</test>
+	<test name="Group of group Test">
+		<groups>
+			<define name="mavenTest">
+				<include name="Test1" />
+				<include name="Test2" />
+			</define>
+			<run>
+				<include name="mavenTest" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.sampleproject.mavenSampleProject.AppTest" />
+			<methods>
+				<include name="test_method_3" />
+			</methods>
+		</classes>
+	</test>
+</suite>
