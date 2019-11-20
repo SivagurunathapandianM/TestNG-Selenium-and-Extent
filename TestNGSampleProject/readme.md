@@ -2,8 +2,15 @@
 
 * selenium is a tool to automate web application testing : URL https://selenium.dev/
 * TestNG is testing framework to faciliate selenium to use organised way of testing
-* extent report is a reporting framework to be integrated with selenium for graphical respresentation 
+* extent report is a reporting framework to be integrated with selenium for graphical respresentation. 
+```text
+					URL : http://extentreports.com/docs/versions/4/java/	
+						  http://extentreports.com/community/
+```
+* jacoco :
 * SonarQube, URL :https://dzone.com/articles/sonarqube-scanning-in-15-minutes-2
+
+
 
 Rest API : https://www.tutorialspoint.com/rest_api_automation_with_rest_assured/index.asp  
 

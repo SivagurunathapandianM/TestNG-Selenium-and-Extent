@@ -1,5 +1,9 @@
 package com.sampleproject.mavenSampleProject;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import com.sampleproject.mavenSampleProject.App;
 import org.junit.*;
 import junit.framework.TestCase;
 
@@ -11,13 +15,13 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -26,16 +30,15 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 /**
  * Unit test for simple App.
  */
-
 public class AppTest extends TestCase
 {   
-	
 	//builds a new report using the html template 
     ExtentHtmlReporter htmlReporter;
     ExtentReports extent;
     //helps to generate the logs in test report.
     ExtentTest test;
     
+
     // Run once, e.g. Database connection, connection pool
     @BeforeClass
     public static void runOnceBeforeClass() {
@@ -60,26 +63,32 @@ public class AppTest extends TestCase
     public void runAfterTestMethod() {
         System.out.println("@After - runAfterTestMethod");
     }
-
+/*
     @Test(groups = { "Test1" })
     public void test_method_1() {
         System.out.println("@Test - test_method_1");
     }
-    
+    */
     @BeforeSuite
     public void beforeSuite() {
         System.out.println("beforeSuite");
     }
+    
      
     @Parameters({ "OS", "browser" })
     @BeforeTest
     public void startReport(String OS, String browser) {
+    	
     	System.out.println("Going to create report");
     	// initialize the HtmlReporter
-    	System.out.println("AccessProductManager.class.getClassLoader()"+AppTest.class.getClassLoader());
+    	String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
     	
-        htmlReporter = new ExtentHtmlReporter("C:/Users/s9pnqm/test-output/testReport.html");
-        
+    //	File file =new File("./test-output/ExtentReports/ExtentDemoReport"+timeStamp+".html");
+    	File file =new File("./test-output/ExtentReports/ExtentDemoReport.html");
+    	System.out.println("File"+file);
+//    	htmlReporter = new ExtentHtmlReporter(file);
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/ExtentReports/ExtentDemoReport.html");
+       
         //initialize ExtentReports and attach the HtmlReporter
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
@@ -90,34 +99,30 @@ public class AppTest extends TestCase
         
         //configuration items to change the look and feel
         //add content, manage tests etc
-        htmlReporter.config().setChartVisibilityOnOpen(true);
+      
         htmlReporter.config().setDocumentTitle("Extent Report Demo");
         htmlReporter.config().setReportName("Test Report");
-        htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.STANDARD);
         htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
     }
      
     @Test(groups = { "Test2" })
     public void test_method_2() {
-        test = extent.createTest("test_method_2", "PASSED test case");
+    
+    	System.out.println("Extentextent : "+extent);
+        test = extent.createTest("testmethod to excute main method", "PASSED test case");
+    	System.out.println("Extenttest : "+test);
     	App app = new App();  
     	String[] name = {"Sivagurunathapandian","Murugan"};
     	app.main(name);
         System.out.println("@Test - test_method_2");
         
     }
-    
-    @Test
-    public void test_method_3() {
-    	test = extent.createTest("test_method_3", "PASSED test case");
-    	System.out.println("@Test - test_method_3");
-    }
-    
+   
     @Test(description="This is testcase2")  
     public void testcase2()  
     {  
-    	test = extent.createTest("testcase2Decription", "PASSED test case");
+    test = extent.createTest("testcase2Decription", "PASSED test case");
     System.out.println("Software Developer");  
     Reporter.log("Browser is opened");
     }  
@@ -127,17 +132,15 @@ public class AppTest extends TestCase
         test = extent.createTest("Test Case 1", "PASSED test case");
         Assert.assertTrue(true);
     }
-    
-    @Test
-    public void testCase4() {
-        test = extent.createTest("Test Case 4", "PASSED test case");
-        Assert.assertTrue(false);
-    }
-     
     @Test
     public void testCase5() {
         test = extent.createTest("Test Case 5", "SKIPPED test case");
         throw new SkipException("Skipping this test with exception");
+    }
+    @Test
+    public void testCase6() {
+        test = extent.createTest("Test Case 6", "PASSED test case");
+        Assert.assertTrue(false);
     }
     
     @AfterMethod
@@ -162,7 +165,7 @@ public class AppTest extends TestCase
      
     @AfterSuite
     public void afterSuite() {
-        System.out.println("afterSuite");
+         System.out.println("afterSuite");
     }
     
     
