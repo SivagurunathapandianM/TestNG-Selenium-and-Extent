@@ -1,6 +1,7 @@
 # Summary
 
-* selenium is a tool to automate web application testing : URL https://selenium.dev/
+* selenium (E2E UI testing) is a tool to automate web application testing : URL https://selenium.dev/ 
+* RestAssured : Testing and validating REST services in Java
 * TestNG is testing framework to faciliate selenium to use organised way of testing
 * extent report is a reporting framework to be integrated with selenium for graphical respresentation. 
 ```text
@@ -8,6 +9,7 @@
 						  http://extentreports.com/community/
 ```
 * jacoco :
+* Sonarlint
 * SonarQube, URL :https://dzone.com/articles/sonarqube-scanning-in-15-minutes-2
 
 
@@ -22,7 +24,10 @@ Rest API : https://www.tutorialspoint.com/rest_api_automation_with_rest_assured/
 [Advance Extent Report Project](https://www.seleniumeasy.com/selenium-tutorials/extent-reports-using-testng-listeners)
 [Selenium Java Youtube link](https://www.youtube.com/playlist?list=PLhW3qG5bs-L8oRay6qeS70vJYZ3SBQnFa)
 
-
+* Unit Test - Running zeebe inside your JVM itself or test container next to JUnit/TestNG whatever. Deploy workflow, start workflow, consume service messages and validate all the steps/services works as expected with this.
+* Integration Testing - Deploy workflow into actual dev/test environment, stat workflow, let actual micro service to pickup and execute the task, assess the report.
+* Smoke Testing - We just run success case from Integration Testing
+* Performance Testing - Deploy Test Workflow into performance/test env and use Jmeter to produce workload. We may need to see, we want to use actual micro services to test the worker load or we would deploy test worker nodes as well.
 
 # Basic structure of testNG xml file:
 ```xml
@@ -80,7 +85,13 @@ Rest API : https://www.tutorialspoint.com/rest_api_automation_with_rest_assured/
 
 # TestNG Parameter and listeners
 
-# SonarQube, 
+
+# SonarQube,
+ 
 docker pull sonarqube 
 docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+docker run -d -p 9000:9000 sonarqube -Dhttp.proxyHost=http://gate-zrh-os.swissre.com -Dhttp.proxyPort=8080
+
+To configure proxy in sonarQube:
+https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
 
