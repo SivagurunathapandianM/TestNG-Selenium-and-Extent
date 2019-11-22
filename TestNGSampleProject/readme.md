@@ -73,7 +73,6 @@ Rest API : https://www.tutorialspoint.com/rest_api_automation_with_rest_assured/
 |@AfterGroups 		| The @AfterGroups annotated method run only once for a group after the execution of all test cases belonging to that group.|
 
 
-
 # TestNG Annotation Attributes
 
 * description

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="0.663" tests="5" errors="0" skipped="1" failures="1">
+<testsuite name="TestSuite" time="0.852" tests="5" errors="0" skipped="1" failures="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Srdev\sdk\jdk1.8.0_112\jre\bin"/>
@@ -27,22 +27,20 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Srdev\build\apache-maven-3.6.1\bin\..\bin\m2.conf"/>
+    <property name="classworlds.conf" value="C:\Srdev\tools\apache-maven-3.3.9\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Srdev\sdk\jdk1.8.0_112\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;c:\oracle\12.2\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Program Files\PuTTY\;c:\srdev\bin;%c:\oracle\12.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\s9pnqm\AppData\Local\Microsoft\WindowsApps;%;C:\srdev\zbctl\zbctl.exe;C:\srdev\Git\cmd;C:\Srdev\build\apache-maven-3.6.1\bin;C:\BackUp\Sivaguru\ZeeBee Modeler\zeebe-broker-0.20.0\bin;C:\Srdev\sdk\jdk-11\bin;;."/>
-    <property name="maven.conf" value="C:\Srdev\build\apache-maven-3.6.1\bin\../conf"/>
+    <property name="java.library.path" value="C:\Srdev\sdk\jdk1.8.0_112\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\srdev\tools\subgit-3.3.7\bin;C:\srdev\programs\apache-jmeter-5.1.1\bin;C:\Srdev\tools\docker-client-2018-11-04-ce;C:\srdev\tools\az-cli-2.0.46\wbin;C:\srdev\tools\MongoDB-Client-3.6.7\bin;C:\srdev\tools\wget\bin;C:\srdev\tools\spring-1.5.6.RELEASE\bin;C:\srdev\tools\mas-client-1.1.5;C:\srdev\tools\yarn-1.7.0\bin;C:\srdev\tools\node-v10.16.3-win-x64;C:\srdev\tools\unixutils;C:\srdev\tools\SCMPlatform_Java_Client;C:\Srdev\tools\SVN_CLIENT_1.8.8;C:\Srdev\tools\curl-7.40.0-win64\bin;C:\srdev\tools\apache-maven-3.3.9\bin;C:\Srdev\tools\gradle-4.10.3\bin;C:\Srdev\tools\groovy-2.4.12\bin;C:\Srdev\tools\PortableGit-2.19.1-64-bit\bin;C:\Srdev\tools\PortableGit-2.19.1-64-bit\usr\bin;C:\Srdev\sdk\jdk1.8.0_112\bin;c:\srdev\bin;C:\Srdev\programs\ConEmu\ConEmu\Scripts;C:\Srdev\programs\ConEmu;C:\Srdev\programs\ConEmu\ConEmu;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;c:\oracle\12.2\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Program Files\PuTTY\;c:\srdev\bin;%c:\oracle\12.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\s9pnqm\AppData\Local\Microsoft\WindowsApps;%;C:\srdev\zbctl\zbctl.exe;C:\srdev\Git\cmd;C:\Srdev\build\apache-maven-3.6.1\bin;C:\BackUp\Sivaguru\ZeeBee Modeler\zeebe-broker-0.20.0\bin;C:\Srdev\sdk\jdk-11\bin;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
-    <property name="library.jansi.path" value="C:\Srdev\build\apache-maven-3.6.1\bin\..\lib\jansi-native"/>
     <property name="user.home" value="C:\Users\s9pnqm"/>
     <property name="user.timezone" value="Europe/Berlin"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="Cp1252"/>
     <property name="user.name" value="S9PNQM"/>
-    <property name="java.class.path" value="C:\Srdev\build\apache-maven-3.6.1\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.class.path" value="C:\Srdev\tools\apache-maven-3.3.9\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Srdev\sdk\jdk1.8.0_112\jre"/>
@@ -57,7 +55,7 @@
     <property name="sun.boot.class.path" value="C:\Srdev\sdk\jdk1.8.0_112\jre\lib\resources.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\rt.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\sunrsasign.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\jsse.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\jce.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\charsets.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\jfr.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\classes"/>
     <property name="sun.stderr.encoding" value="cp437"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Srdev\build\apache-maven-3.6.1\bin\.."/>
+    <property name="maven.home" value="C:\Srdev\tools\apache-maven-3.3.9\bin\.."/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -66,11 +64,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testCase1 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.014"/>
+  <testcase name="testCase1 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.015"/>
   <testcase name="testCase5 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
     <skipped/>
   </testcase>
-  <testcase name="testCase6 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.008">
+  <testcase name="testCase6 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.01">
     <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -78,6 +76,6 @@
 	at com.sampleproject.mavenSampleProject.AppTest.testCase6(AppTest.java:143)
 </failure>
   </testcase>
-  <testcase name="test_method_2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.641"/>
-  <testcase name="testcase2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0"/>
+  <testcase name="test_method_2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.826"/>
+  <testcase name="testcase2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.001"/>
 </testsuite>
