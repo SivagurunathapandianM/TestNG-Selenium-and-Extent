@@ -1,9 +1,20 @@
 package com.sampleproject.mavenSampleProject;
 
 import java.io.File;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.sampleproject.mavenSampleProject.App;
+
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.get;
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
+import io.restassured.http.ContentType;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hamcrest.Matchers;
 import org.junit.*;
 import junit.framework.TestCase;
 
@@ -15,7 +26,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -32,12 +42,13 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
  */
 public class AppTest extends TestCase
 {   
+	private static final Logger LOG = LogManager.getLogger(AppTest.class);
 	//builds a new report using the html template 
     ExtentHtmlReporter htmlReporter;
     ExtentReports extent;
     //helps to generate the logs in test report.
     ExtentTest test;
-    
+    final static String ROOT_URI = "http://zb-control.sco-dev.caas.swissre.com";
 
     // Run once, e.g. Database connection, connection pool
     @BeforeClass
@@ -108,7 +119,6 @@ public class AppTest extends TestCase
      
     @Test(groups = { "Test2" })
     public void test_method_2() {
-    
     	System.out.println("Extentextent : "+extent);
         test = extent.createTest("testmethod to excute main method", "PASSED test case");
     	System.out.println("Extenttest : "+test);
@@ -143,7 +153,54 @@ public class AppTest extends TestCase
         Assert.assertTrue(false);
     }
     
-    @AfterMethod
+    @Test(description="Rest Assured get test")  
+    public void simple_get_test() {
+    	LOG.info("Invoking zeebe listofworkflow service vai swagger api ");
+    	test = extent.createTest("Testing Zeebe swagger api list of workflow implementation", "PASSED test case");
+    	Response response = (Response) get(ROOT_URI + "/listWorkflows");
+    	System.out.println(response.asString());	
+    }
+
+	@Test(description="Rest Assured Post test")  
+	public void post_test() {
+		LOG.info("Invoking zeebe Start service vai swagger api ");
+		test = extent.createTest("Testing Zeebe swagger api start workflow implementation", "PASSED test case");
+		String jsonString = "{\"params\": \"{ \"securityDomainDev\": \"true\",\"securityDomainTrain\": \"true\",\"securityDomainProd\": \"true\",\"devenvironment\": \"DEV\",\"iteenvironment\": \"ITE\",\"prodenvironment\": \"PROD\",\"groupName\":\"LoadTEst1\",\"groupPath\":\"OU=Service,OU=CHR,OU=EMEA,OU=Groups\",\"environment\": \"ITE\", \"attributeValues\": \"{\\\"objectClass\\\":\\\"group\\\"}\", \"doFailIfGroupAlreadyExist\":\"false\", \"businessReason\": \"businessReasonStuffGoesHere\", \"catItemSysid\": \"b060754e37bb97c8524144e654990ed9\", \"inputParams\": \"[{\\\"dirx_role_valid_from\\\":\\\"2019-08-15\\\"},{\\\"dirx_role_valid_to\\\":\\\"2099-12-31\\\"},{\\\"dirx_role_is_exception\\\":\\\"false\\\"}]\", \"lineManager\": \"TECAOSSN\", \"parentRequest\": \"RITM05695830\", \"requestedFor\": \"S0MT5F\", \"workplaceID\": \"CHR5XXXX\", \"applicationId\": \"AOS\", \"appPrefix\": \"SCO\", \"privilegedRole\": \"test\",\"riskLevel\": \"test\",\"shortDesc\": \"test\",\"longDesc\": \"test\",\"endorsementRequired\": \"test\",\"needGroups\": \"test\",\"isEDMS\": \"test\",\"isEBPM\": \"test\",\"roleName\": \"test\",\"approvers\": \"test\"}\"}";
+		Response response = given()
+				.contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
+				.body(jsonString)
+				.when()
+				.post(ROOT_URI + "/workflowInstance/SR_WAS_ROLEMANAGEMENT_P");
+		
+		System.out.println("POST Response\n" + response.asString());
+	}
+	
+	@Test(description="Rest Assured Post test")  
+	public void put_test() {
+		LOG.info("Invoking zeebe deployWorkflow service vai swagger api ");
+		test = extent.createTest("Testing Zeebe swagger api list of workflow implementation", "PASSED test case");
+		Response response = given().multiPart(getFileFromResources("SR_WAS_ROLEMANAGEMENT_P.bpmn"))
+				.accept(ContentType.JSON)
+				.when()
+				.post(ROOT_URI + "/deployWorkflow");
+				//.put(ROOT_URI + "/deployWorkflow");
+		
+		System.out.println("POST Response\n" + response.asString());
+	}
+	@Test
+	public void delete_test() {
+		Response response = delete(ROOT_URI + "/workflowInstance/2251799814601534");
+		System.out.println(response.asString());
+		System.out.println(response.getStatusCode());
+		// check if id=3 is deleted
+		response = get(ROOT_URI + "/list");
+		System.out.println(response.asString());
+		response.then().body("id", Matchers.not(3));
+	}
+    
+
+	@AfterMethod
     public void getResult(ITestResult result) {
         if(result.getStatus() == ITestResult.FAILURE) {
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
@@ -167,6 +224,20 @@ public class AppTest extends TestCase
     public void afterSuite() {
          System.out.println("afterSuite");
     }
+    
+    private File getFileFromResources(String fileName) {
+
+        ClassLoader classLoader = getClass().getClassLoader();
+
+        URL resource = classLoader.getResource(fileName);
+        if (resource == null) {
+            throw new IllegalArgumentException("file is not found!");
+        } else {
+            return new File(resource.getFile());
+        }
+
+    }
+
     
     
 }

@@ -1,11 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 3.003 sec <<< FAILURE!
-testCase6 on null(com.sampleproject.mavenSampleProject.AppTest)(com.sampleproject.mavenSampleProject.AppTest)  Time elapsed: 0.01 sec  <<< FAILURE!
-java.lang.AssertionError: null
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at com.sampleproject.mavenSampleProject.AppTest.testCase6(AppTest.java:143)
+Tests run: 20, Failures: 1, Errors: 0, Skipped: 18, Time elapsed: 23.9 sec <<< FAILURE!
+getResult on null(com.sampleproject.mavenSampleProject.AppTest)(com.sampleproject.mavenSampleProject.AppTest)  Time elapsed: 19.275 sec  <<< FAILURE!
+java.lang.NullPointerException: null
+	at com.sampleproject.mavenSampleProject.AppTest.getResult(AppTest.java:210)
 

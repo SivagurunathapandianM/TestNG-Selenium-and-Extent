@@ -1,0 +1,59 @@
+#
+# Zeebe Workflow Deployer
+# 
+
+name: 'sco-platform-zeebe-workflow-deployer'
+variables:
+  - name: 'AGENT-POOL'
+    value: 'Agent_Name'
+
+
+# Trigger deployment based on master/feature/working branch
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+    - MI-990-WorkflowCICD
+  paths:
+    include:
+    - paas-middleware/*
+
+stages:
+- stage: Maven_build
+  jobs:  
+  - job: 
+    steps:
+    - checkout: self
+    - task: Maven@3
+      inputs:
+        mavenPomFile: 'paas-middleware/mvp-workflow-test/pom.xml'
+        mavenOptions: '-Xmx3072m'
+        javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.11'
+        jdkArchitectureOption: 'x64'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
+        goals: 'clean compile package'
+- stage: deploy_workflow
+  variables:
+    - group: 'SR-SCO-DEV-WE-ZEEBE-CLUSTER-CONFIG'
+  jobs:  
+  - deployment: zeebe_workflow_deployer
+    pool: 'SCO-Private-Pool'
+    environment: 'DEV'
+    strategy:
+     runOnce:
+      deploy:
+## TODO: Write a look to deploy all the workflows on this directory      
+       steps:
+       - checkout: self
+       - script: |
+          zbctl deploy $(System.DefaultWorkingDirectory)/paas-middleware/mvp-workflow-test/src/test/resources/SR_WAS_ROLEMANAGEMENT_P.bpmn --address $(ZEEBE_HOST)
+         displayName: 'Deloy Zeebe Workflow'
+         env:
+           ZEEBE_HOST: $(ZEEBE_HOST)
+

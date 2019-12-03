@@ -17,6 +17,48 @@
 	</properties>
 
 	<dependencies>
+		<!-- Rest Assured dependency -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.1.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- When using Java 9+ and find yourself having problems with split packages 
+			you can depend on: -->
+		<!-- <dependency> <groupId>io.rest-assured</groupId> <artifactId>rest-assured-all</artifactId> 
+			<version>4.1.2</version> <scope>test</scope> </dependency> -->
+
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>4.1.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>xml-path</artifactId>
+			<version>4.1.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Rest Assured dependency JSON Schema Validation -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>4.1.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!--Rest Assured dependency Spring Mock Mvc -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>spring-mock-mvc</artifactId>
+			<version>4.1.2</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- TESTING -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -53,15 +95,12 @@
 			<artifactId>extentreports</artifactId>
 			<version>4.0.9</version>
 		</dependency>
-
-
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.12.0</version>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -79,6 +118,9 @@
 						<!-- <suiteXmlFile>suites-test-testng.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 					<testFailureIgnore>true</testFailureIgnore>
+				<!-- 	<includes>
+						<include>com.bpm.mvpWorkflowtestmanager.MVPWorkflowUnitTesting</include>
+					</includes> -->
 				</configuration>
 			</plugin>
 			<plugin>

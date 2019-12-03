@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [Group of group Suite]">
-  <parameter name="OS" value="Windows"/>
-  <parameter name="browser" value="Chrome"/>
-  <test thread-count="5" verbose="0" name="FunctionalTesting(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.sampleproject.mavenSampleProject.AppTest">
         <methods>
@@ -23,5 +21,5 @@
         </methods>
       </class> <!-- com.sampleproject.mavenSampleProject.AppTest -->
     </classes>
-  </test> <!-- FunctionalTesting(failed) -->
-</suite> <!-- Failed suite [Group of group Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

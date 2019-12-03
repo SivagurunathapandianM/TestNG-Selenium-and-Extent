@@ -1,81 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="0.852" tests="5" errors="0" skipped="1" failures="1">
+<testsuite name="TestSuite" time="38.523" tests="20" errors="0" skipped="18" failures="1">
   <properties>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Srdev\sdk\jdk1.8.0_112\jre\bin"/>
-    <property name="java.vm.version" value="25.112-b15"/>
-    <property name="user.country.format" value="CH"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\BackUp\Sivaguru\gitHuB\TestNG-Selenium-and-Extent\TestNGSampleProject"/>
-    <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=";"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.script" value=""/>
-    <property name="user.country" value="US"/>
+    <property name="java.vendor" value="IBM Corporation"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\BackUp\Sivaguru\gitHuB\TestNG-Selenium-and-Extent\TestNGSampleProject"/>
-    <property name="java.runtime.version" value="1.8.0_112-b15"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Srdev\sdk\jdk1.8.0_112\jre\lib\endorsed"/>
-    <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\s9pnqm\AppData\Local\Temp\63\"/>
-    <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Srdev\tools\apache-maven-3.3.9\bin\..\bin\m2.conf"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Srdev\sdk\jdk1.8.0_112\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\srdev\tools\subgit-3.3.7\bin;C:\srdev\programs\apache-jmeter-5.1.1\bin;C:\Srdev\tools\docker-client-2018-11-04-ce;C:\srdev\tools\az-cli-2.0.46\wbin;C:\srdev\tools\MongoDB-Client-3.6.7\bin;C:\srdev\tools\wget\bin;C:\srdev\tools\spring-1.5.6.RELEASE\bin;C:\srdev\tools\mas-client-1.1.5;C:\srdev\tools\yarn-1.7.0\bin;C:\srdev\tools\node-v10.16.3-win-x64;C:\srdev\tools\unixutils;C:\srdev\tools\SCMPlatform_Java_Client;C:\Srdev\tools\SVN_CLIENT_1.8.8;C:\Srdev\tools\curl-7.40.0-win64\bin;C:\srdev\tools\apache-maven-3.3.9\bin;C:\Srdev\tools\gradle-4.10.3\bin;C:\Srdev\tools\groovy-2.4.12\bin;C:\Srdev\tools\PortableGit-2.19.1-64-bit\bin;C:\Srdev\tools\PortableGit-2.19.1-64-bit\usr\bin;C:\Srdev\sdk\jdk1.8.0_112\bin;c:\srdev\bin;C:\Srdev\programs\ConEmu\ConEmu\Scripts;C:\Srdev\programs\ConEmu;C:\Srdev\programs\ConEmu\ConEmu;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;c:\oracle\12.2\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Program Files\PuTTY\;c:\srdev\bin;%c:\oracle\12.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\s9pnqm\AppData\Local\Microsoft\WindowsApps;%;C:\srdev\zbctl\zbctl.exe;C:\srdev\Git\cmd;C:\Srdev\build\apache-maven-3.6.1\bin;C:\BackUp\Sivaguru\ZeeBee Modeler\zeebe-broker-0.20.0\bin;C:\Srdev\sdk\jdk-11\bin;;."/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="java.class.version" value="52.0"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.0"/>
-    <property name="user.home" value="C:\Users\s9pnqm"/>
-    <property name="user.timezone" value="Europe/Berlin"/>
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
-    <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="S9PNQM"/>
-    <property name="java.class.path" value="C:\Srdev\tools\apache-maven-3.3.9\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
-    <property name="java.vm.specification.version" value="1.8"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Srdev\sdk\jdk1.8.0_112\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package install sonar:sonar"/>
-    <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.language" value="en"/>
-    <property name="user.language.format" value="de"/>
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
-    <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_112"/>
-    <property name="java.ext.dirs" value="C:\Srdev\sdk\jdk1.8.0_112\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Srdev\sdk\jdk1.8.0_112\jre\lib\resources.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\rt.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\sunrsasign.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\jsse.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\jce.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\charsets.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\lib\jfr.jar;C:\Srdev\sdk\jdk1.8.0_112\jre\classes"/>
-    <property name="sun.stderr.encoding" value="cp437"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Srdev\tools\apache-maven-3.3.9\bin\.."/>
-    <property name="file.separator" value="\"/>
-    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
-    <property name="sun.cpu.endian" value="little"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="sun.stdout.encoding" value="cp437"/>
+    <property name="sun.boot.class.path" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin\compressedrefs\jclSC180\vm.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\se-service.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\cuda4j.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\math.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmorb.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmorbapi.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmcfw.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmpkcs.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmcertpathfw.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmjgssfw.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmjssefw.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmsaslfw.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmjcefw.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmjgssprovider.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmjsseprovider2.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmcertpathprovider.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\xmldsigfw.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\xml.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\charsets.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\resources.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\rt.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\dataaccess.jar;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ibmgpu.jar"/>
     <property name="sun.desktop" value="windows"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.runtime.version" value="pwa6480sr2fp10ifx-20160223_01 (SR2 FP10+IV81318+IV81645+IV81741+IV81716)"/>
+    <property name="user.name" value="S9PNQM"/>
+    <property name="java.compiler" value="j9jit28"/>
+    <property name="os.encoding" value="UTF8"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="com.ibm.util.extralibs.properties" value=""/>
+    <property name="com.ibm.jcl.checkClassPath" value=""/>
+    <property name="user.language" value="de"/>
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin\compressedrefs;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin"/>
+    <property name="sun.boot.library.path" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin\compressedrefs;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin"/>
+    <property name="classworlds.conf" value="C:\eclipseWorkspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf9189531058059723903.tmp"/>
+    <property name="java.version" value="1.8.0"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="com.ibm.system.agent.path" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="com.ibm.zero.version" value="2"/>
+    <property name="java.endorsed.dirs" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\endorsed"/>
+    <property name="com.ibm.oti.vm.library.version" value="28"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="com.ibm.packed.version" value="2"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="user.country" value="CH"/>
+    <property name="java.home" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre"/>
+    <property name="java.vm.info" value="JRE 1.8.0 Windows 10 amd64-64 Compressed References 20160210_289934 (JIT enabled, AOT enabled)&#10;J9VM - R28_Java8_SR2_20160210_1617_B289934&#10;JIT  - tr.r14.java_20151209_107110.04&#10;GC   - R28_Java8_SR2_20160210_1617_B289934_CMPRSS&#10;J9CL - 20160210_289934"/>
+    <property name="os.version" value="10.0"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.version" value="2.8"/>
+    <property name="user.variant" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="ibm.signalhandling.sigint" value="true"/>
+    <property name="user.home" value="C:\Users\s9pnqm"/>
+    <property name="com.ibm.cpu.endian" value="little"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="ibm.signalhandling.sigchain" value="true"/>
+    <property name="java.library.path" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin\compressedrefs;C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Srdev/ide/eclipse//ibm_sdk_1.8.0/jre/bin/j9vm;C:/Srdev/ide/eclipse//ibm_sdk_1.8.0/jre/bin;C:/Srdev/ide/eclipse//ibm_sdk_1.8.0/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;c:\oracle\12.2\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Program Files\PuTTY\;c:\srdev\bin;%c:\oracle\12.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Adobe\Adobe PDF iFilter 11 for 64-bit platforms\bin;C:\ORACLE\12.1.0.2\client\bin;C:\oracle\12.1.0.2_32\client\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\s9pnqm\AppData\Local\Microsoft\WindowsApps;%;C:\srdev\zbctl\zbctl.exe;C:\srdev\Git\cmd;C:\Srdev\build\apache-maven-3.6.1\bin;C:\BackUp\Sivaguru\ZeeBee Modeler\zeebe-broker-0.20.0\bin;C:\Srdev\sdk\jdk-11\bin;;C:\Srdev\ide\eclipse;;."/>
+    <property name="java.vendor.url" value="http://www.ibm.com/"/>
+    <property name="java.vm.vendor" value="IBM Corporation"/>
+    <property name="java.fullversion" value="JRE 1.8.0 IBM J9 2.8 Windows 10 amd64-64 Compressed References 20160210_289934 (JIT enabled, AOT enabled)&#10;J9VM - R28_Java8_SR2_20160210_1617_B289934&#10;JIT  - tr.r14.java_20151209_107110.04&#10;GC   - R28_Java8_SR2_20160210_1617_B289934_CMPRSS&#10;J9CL - 20160210_289934"/>
+    <property name="maven.home" value="C:\BackUp\Sivaguru\gitHuB\TestNG-Selenium-and-Extent\TestNGSampleProject\EMBEDDED"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -s C:\Srdev\build\apache-maven-3.6.1\conf\settings.xml clean package install"/>
+    <property name="java.class.path" value="/C:/Srdev/ide/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.6.3.20160209-1444/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.io.tmpdir" value="C:\Users\s9pnqm\AppData\Local\Temp\12\"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\BackUp\Sivaguru\gitHuB\TestNG-Selenium-and-Extent\TestNGSampleProject"/>
+    <property name="ibm.system.encoding" value="Cp1252"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="ibm.signalhandling.rs" value="false"/>
+    <property name="java.ext.dirs" value="C:\Srdev\ide\eclipse\ibm_sdk_1.8.0\jre\lib\ext"/>
+    <property name="user.dir" value="C:\BackUp\Sivaguru\gitHuB\TestNG-Selenium-and-Extent\TestNGSampleProject"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.name" value="IBM J9 VM"/>
+    <property name="com.ibm.oti.shared.enabled" value="false"/>
+    <property name="com.ibm.vm.bitmode" value="64"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="com.ibm.oti.configuration" value="scar"/>
+    <property name="com.ibm.oti.jcl.build" value="20160210_289934"/>
+    <property name="java.specification.version" value="1.8"/>
   </properties>
-  <testcase name="testCase1 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.015"/>
+  <testcase name="delete_test on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="19.248"/>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="19.275">
+    <failure type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at com.sampleproject.mavenSampleProject.AppTest.getResult(AppTest.java:210)
+</failure>
+  </testcase>
+  <testcase name="post_test on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="put_test on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="simple_get_test on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="testCase1 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
   <testcase name="testCase5 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
     <skipped/>
   </testcase>
-  <testcase name="testCase6 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.01">
-    <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at com.sampleproject.mavenSampleProject.AppTest.testCase6(AppTest.java:143)
-</failure>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase name="test_method_2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.826"/>
-  <testcase name="testcase2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0.001"/>
+  <testcase name="testCase6 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="test_method_2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="testcase2 on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getResult on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="afterTest on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="afterSuite on null(com.sampleproject.mavenSampleProject.AppTest)" classname="com.sampleproject.mavenSampleProject.AppTest" time="0">
+    <skipped/>
+  </testcase>
 </testsuite>
