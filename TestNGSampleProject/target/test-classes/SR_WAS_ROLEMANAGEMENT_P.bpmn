@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0b2o02k" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Zeebe Modeler" exporterVersion="0.6.2">
+  <bpmn:process id="SR_WAS_ROLEMANAGEMENT_P" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_0afnflg</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_017lncb">
+      <bpmn:incoming>SequenceFlow_0afnflg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0rk73kl</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1sz0i60</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0afnflg" sourceRef="StartEvent_1" targetRef="ExclusiveGateway_017lncb" />
+    <bpmn:serviceTask id="ServiceTask_0x7ffcs" name="Create CD Group DEV">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="groupName" target="groupName" />
+          <zeebe:input source="groupPath" target="groupPath" />
+          <zeebe:input source="devenvironment" target="environment" />
+          <zeebe:input source="attributeValues" target="attributeValues" />
+          <zeebe:output source="distinguishedName" target="distinguishedName" />
+          <zeebe:output source="objectSid" target="objectSid" />
+          <zeebe:output source="objectGUID" target="objectGUID" />
+        </zeebe:ioMapping>
+        <zeebe:taskDefinition type="ldap_group_create" retries="" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0rk73kl</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ydkg0x</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_1ww6azm" name="Create Access Product for WAS-DEV">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="Access_Product_Creation_For_WAS_Roles" />
+        <zeebe:ioMapping>
+          <zeebe:input source="groupName" target="groupName" />
+          <zeebe:input source="privilegedRole" target="privilegedRole" />
+          <zeebe:input source="riskLevel" target="riskLevel" />
+          <zeebe:input source="longDesc" target="longDesc" />
+          <zeebe:input source="shortDesc" target="shortDesc" />
+          <zeebe:input source="endorsementRequired" target="endorsementRequired" />
+          <zeebe:input source="needGroups" target="needGroups" />
+          <zeebe:input source="isEDMS" target="isEDMS" />
+          <zeebe:input source="isEBPM" target="isEBPM" />
+          <zeebe:input source="devenvironment" target="environment" />
+          <zeebe:input source="roleName" target="roleName" />
+          <zeebe:input source="approvers" target="approvers" />
+          <zeebe:input source="applicationId" target="applicationId" />
+          <zeebe:input source="appPrefix" target="appPrefix" />
+          <zeebe:output source="applicationRole" target="applicationRole" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1ydkg0x</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_18gv6o5</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_0v4np4n" name="Add Initial Users for Access Group  by Submit Access Request DEV">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="devenvironment" target="environment" />
+          <zeebe:input source="catItemSysid" target="catItemSysid" />
+          <zeebe:input source="inputParams" target="inputParams" />
+          <zeebe:input source="parentRequest" target="parentRequest" />
+          <zeebe:input source="lineManager" target="lineManager" />
+          <zeebe:input source="requestedFor" target="requestedFor" />
+          <zeebe:input source="workplaceID" target="workplaceID" />
+          <zeebe:input source="businessReason" target="businessReason" />
+          <zeebe:output source="requestSysID" target="requestSysID" />
+          <zeebe:output source="status" target="status" />
+          <zeebe:output source="message" target="message" />
+          <zeebe:output source="requestNumber" target="requestNumber" />
+        </zeebe:ioMapping>
+        <zeebe:taskDefinition type="SNOW_Catalog" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_18gv6o5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1a99ymb</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0rk73kl" sourceRef="ExclusiveGateway_017lncb" targetRef="ServiceTask_0x7ffcs">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">securityDomainDev == "true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1ydkg0x" sourceRef="ServiceTask_0x7ffcs" targetRef="ServiceTask_1ww6azm" />
+    <bpmn:sequenceFlow id="SequenceFlow_18gv6o5" sourceRef="ServiceTask_1ww6azm" targetRef="ServiceTask_0v4np4n" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_1wemg0u">
+      <bpmn:incoming>SequenceFlow_1a99ymb</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1sz0i60</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_17gzjos</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0lo356h</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_1a99ymb" sourceRef="ServiceTask_0v4np4n" targetRef="ExclusiveGateway_1wemg0u" />
+    <bpmn:sequenceFlow id="SequenceFlow_1sz0i60" sourceRef="ExclusiveGateway_017lncb" targetRef="ExclusiveGateway_1wemg0u">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">securityDomainDev == "false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:serviceTask id="ServiceTask_04du9uf" name="Create CD Group TEST">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="groupName" target="groupName" />
+          <zeebe:input source="groupPath" target="groupPath" />
+          <zeebe:input source="iteenvironment" target="environment" />
+          <zeebe:input source="attributeValues" target="attributeValues" />
+          <zeebe:output source="distinguishedName" target="distinguishedName" />
+          <zeebe:output source="objectSid" target="objectSid" />
+          <zeebe:output source="objectGUID" target="objectGUID" />
+        </zeebe:ioMapping>
+        <zeebe:taskDefinition type="ldap_group_create" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_17gzjos</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1g0cqsk</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_1hwqllv" name="Create Access Product for WAS-TEST">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="Access_Product_Creation_For_WAS_Roles" />
+        <zeebe:ioMapping>
+          <zeebe:input source="groupName" target="groupName" />
+          <zeebe:input source="privilegedRole" target="privilegedRole" />
+          <zeebe:input source="riskLevel" target="riskLevel" />
+          <zeebe:input source="longDesc" target="longDesc" />
+          <zeebe:input source="shortDesc" target="shortDesc" />
+          <zeebe:input source="endorsementRequired" target="endorsementRequired" />
+          <zeebe:input source="needGroups" target="needGroups" />
+          <zeebe:input source="isEDMS" target="isEDMS" />
+          <zeebe:input source="isEBPM" target="isEBPM" />
+          <zeebe:input source="iteenvironment" target="environment" />
+          <zeebe:input source="roleName" target="roleName" />
+          <zeebe:input source="approvers" target="approvers" />
+          <zeebe:input source="applicationId" target="applicationId" />
+          <zeebe:input source="appPrefix" target="appPrefix" />
+          <zeebe:output source="applicationRole" target="applicationRole" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1g0cqsk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_05w20ri</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_01hh74y" name="Add Initial Users for Access Group  by Submit Access Request TEST">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="iteenvironment" target="environment" />
+          <zeebe:input source="catItemSysid" target="catItemSysid" />
+          <zeebe:input source="inputParams" target="inputParams" />
+          <zeebe:input source="parentRequest" target="parentRequest" />
+          <zeebe:input source="lineManager" target="lineManager" />
+          <zeebe:input source="requestedFor" target="requestedFor" />
+          <zeebe:input source="workplaceID" target="workplaceID" />
+          <zeebe:input source="businessReason" target="businessReason" />
+          <zeebe:output source="requestSysID" target="requestSysID" />
+          <zeebe:output source="status" target="status" />
+          <zeebe:output source="message" target="message" />
+          <zeebe:output source="requestNumber" target="requestNumber" />
+        </zeebe:ioMapping>
+        <zeebe:taskDefinition type="SNOW_Catalog" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_05w20ri</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0mocgg3</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_17gzjos" sourceRef="ExclusiveGateway_1wemg0u" targetRef="ServiceTask_04du9uf">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">securityDomainTrain == "true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1g0cqsk" sourceRef="ServiceTask_04du9uf" targetRef="ServiceTask_1hwqllv" />
+    <bpmn:sequenceFlow id="SequenceFlow_05w20ri" sourceRef="ServiceTask_1hwqllv" targetRef="ServiceTask_01hh74y" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_1tal3u4">
+      <bpmn:incoming>SequenceFlow_0mocgg3</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0lo356h</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_13vp192</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_17lofy7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0mocgg3" sourceRef="ServiceTask_01hh74y" targetRef="ExclusiveGateway_1tal3u4" />
+    <bpmn:sequenceFlow id="SequenceFlow_0lo356h" sourceRef="ExclusiveGateway_1wemg0u" targetRef="ExclusiveGateway_1tal3u4">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">securityDomainTrain == "false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:serviceTask id="ServiceTask_1o4ktlz" name="Create CD Group PROD">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="groupName" target="groupName" />
+          <zeebe:input source="groupPath" target="groupPath" />
+          <zeebe:input source="prodenvironment" target="environment" />
+          <zeebe:input source="attributeValues" target="attributeValues" />
+          <zeebe:output source="distinguishedName" target="distinguishedName" />
+          <zeebe:output source="objectSid" target="objectSid" />
+          <zeebe:output source="objectGUID" target="objectGUID" />
+        </zeebe:ioMapping>
+        <zeebe:taskDefinition type="ldap_group_create" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_13vp192</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_08jzuec</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_1n7y05d" name="Create Access Product for WAS-PROD">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="Access_Product_Creation_For_WAS_Roles" />
+        <zeebe:ioMapping>
+          <zeebe:input source="groupName" target="groupName" />
+          <zeebe:input source="privilegedRole" target="privilegedRole" />
+          <zeebe:input source="riskLevel" target="riskLevel" />
+          <zeebe:input source="longDesc" target="longDesc" />
+          <zeebe:input source="shortDesc" target="shortDesc" />
+          <zeebe:input source="endorsementRequired" target="endorsementRequired" />
+          <zeebe:input source="needGroups" target="needGroups" />
+          <zeebe:input source="isEDMS" target="isEDMS" />
+          <zeebe:input source="isEBPM" target="isEBPM" />
+          <zeebe:input source="prodenvironment" target="environment" />
+          <zeebe:input source="roleName" target="roleName" />
+          <zeebe:input source="approvers" target="approvers" />
+          <zeebe:input source="applicationId" target="applicationId" />
+          <zeebe:input source="appPrefix" target="appPrefix" />
+          <zeebe:output source="applicationRole" target="applicationRole" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_08jzuec</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_15hxk5r</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_0fwacmb" name="Add Initial Users for Access Group  by Submit Access Request PROD">
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="prodenvironment" target="environment" />
+          <zeebe:input source="catItemSysid" target="catItemSysid" />
+          <zeebe:input source="inputParams" target="inputParams" />
+          <zeebe:input source="parentRequest" target="parentRequest" />
+          <zeebe:input source="lineManager" target="lineManager" />
+          <zeebe:input source="requestedFor" target="requestedFor" />
+          <zeebe:input source="workplaceID" target="workplaceID" />
+          <zeebe:input source="businessReason" target="businessReason" />
+          <zeebe:output source="requestSysID" target="requestSysID" />
+          <zeebe:output source="status" target="status" />
+          <zeebe:output source="message" target="message" />
+          <zeebe:output source="requestNumber" target="requestNumber" />
+        </zeebe:ioMapping>
+        <zeebe:taskDefinition type="SNOW_Catalog" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_15hxk5r</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0zyd5uo</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_13vp192" sourceRef="ExclusiveGateway_1tal3u4" targetRef="ServiceTask_1o4ktlz">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">securityDomainProd == "true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_08jzuec" sourceRef="ServiceTask_1o4ktlz" targetRef="ServiceTask_1n7y05d" />
+    <bpmn:sequenceFlow id="SequenceFlow_15hxk5r" sourceRef="ServiceTask_1n7y05d" targetRef="ServiceTask_0fwacmb" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_1ef3xxb">
+      <bpmn:incoming>SequenceFlow_0zyd5uo</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_17lofy7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0r172v3</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0zyd5uo" sourceRef="ServiceTask_0fwacmb" targetRef="ExclusiveGateway_1ef3xxb" />
+    <bpmn:sequenceFlow id="SequenceFlow_17lofy7" sourceRef="ExclusiveGateway_1tal3u4" targetRef="ExclusiveGateway_1ef3xxb">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">securityDomainProd == "false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:endEvent id="EndEvent_11mlbdj">
+      <bpmn:incoming>SequenceFlow_0r172v3</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0r172v3" sourceRef="ExclusiveGateway_1ef3xxb" targetRef="EndEvent_11mlbdj" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="SR_WAS_ROLEMANAGEMENT_P">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="166" y="263" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_017lncb_di" bpmnElement="ExclusiveGateway_017lncb" isMarkerVisible="true">
+        <dc:Bounds x="303" y="256" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0afnflg_di" bpmnElement="SequenceFlow_0afnflg">
+        <di:waypoint x="202" y="281" />
+        <di:waypoint x="303" y="281" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0x7ffcs_di" bpmnElement="ServiceTask_0x7ffcs">
+        <dc:Bounds x="383" y="106" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1ww6azm_di" bpmnElement="ServiceTask_1ww6azm">
+        <dc:Bounds x="541" y="106" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0v4np4n_di" bpmnElement="ServiceTask_0v4np4n">
+        <dc:Bounds x="700" y="106" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0rk73kl_di" bpmnElement="SequenceFlow_0rk73kl">
+        <di:waypoint x="328" y="256" />
+        <di:waypoint x="328" y="146" />
+        <di:waypoint x="383" y="146" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ydkg0x_di" bpmnElement="SequenceFlow_1ydkg0x">
+        <di:waypoint x="483" y="146" />
+        <di:waypoint x="541" y="146" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_18gv6o5_di" bpmnElement="SequenceFlow_18gv6o5">
+        <di:waypoint x="641" y="146" />
+        <di:waypoint x="700" y="146" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1wemg0u_di" bpmnElement="ExclusiveGateway_1wemg0u" isMarkerVisible="true">
+        <dc:Bounds x="824" y="256" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1a99ymb_di" bpmnElement="SequenceFlow_1a99ymb">
+        <di:waypoint x="800" y="146" />
+        <di:waypoint x="849" y="146" />
+        <di:waypoint x="849" y="256" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1sz0i60_di" bpmnElement="SequenceFlow_1sz0i60">
+        <di:waypoint x="353" y="281" />
+        <di:waypoint x="824" y="281" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_04du9uf_di" bpmnElement="ServiceTask_04du9uf">
+        <dc:Bounds x="922" y="389" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1hwqllv_di" bpmnElement="ServiceTask_1hwqllv">
+        <dc:Bounds x="1091" y="389" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_01hh74y_di" bpmnElement="ServiceTask_01hh74y">
+        <dc:Bounds x="1266" y="389" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_17gzjos_di" bpmnElement="SequenceFlow_17gzjos">
+        <di:waypoint x="849" y="306" />
+        <di:waypoint x="849" y="429" />
+        <di:waypoint x="922" y="429" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1g0cqsk_di" bpmnElement="SequenceFlow_1g0cqsk">
+        <di:waypoint x="1022" y="429" />
+        <di:waypoint x="1091" y="429" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_05w20ri_di" bpmnElement="SequenceFlow_05w20ri">
+        <di:waypoint x="1191" y="429" />
+        <di:waypoint x="1266" y="429" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1tal3u4_di" bpmnElement="ExclusiveGateway_1tal3u4" isMarkerVisible="true">
+        <dc:Bounds x="1404" y="256" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0mocgg3_di" bpmnElement="SequenceFlow_0mocgg3">
+        <di:waypoint x="1366" y="429" />
+        <di:waypoint x="1429" y="429" />
+        <di:waypoint x="1429" y="306" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0lo356h_di" bpmnElement="SequenceFlow_0lo356h">
+        <di:waypoint x="874" y="281" />
+        <di:waypoint x="1404" y="281" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1o4ktlz_di" bpmnElement="ServiceTask_1o4ktlz">
+        <dc:Bounds x="1514" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1n7y05d_di" bpmnElement="ServiceTask_1n7y05d">
+        <dc:Bounds x="1668" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0fwacmb_di" bpmnElement="ServiceTask_0fwacmb">
+        <dc:Bounds x="1830" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_13vp192_di" bpmnElement="SequenceFlow_13vp192">
+        <di:waypoint x="1429" y="256" />
+        <di:waypoint x="1429" y="130" />
+        <di:waypoint x="1514" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_08jzuec_di" bpmnElement="SequenceFlow_08jzuec">
+        <di:waypoint x="1614" y="130" />
+        <di:waypoint x="1668" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_15hxk5r_di" bpmnElement="SequenceFlow_15hxk5r">
+        <di:waypoint x="1768" y="130" />
+        <di:waypoint x="1830" y="130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1ef3xxb_di" bpmnElement="ExclusiveGateway_1ef3xxb" isMarkerVisible="true">
+        <dc:Bounds x="1956" y="256" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0zyd5uo_di" bpmnElement="SequenceFlow_0zyd5uo">
+        <di:waypoint x="1930" y="130" />
+        <di:waypoint x="1981" y="130" />
+        <di:waypoint x="1981" y="256" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_17lofy7_di" bpmnElement="SequenceFlow_17lofy7">
+        <di:waypoint x="1454" y="281" />
+        <di:waypoint x="1956" y="281" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_11mlbdj_di" bpmnElement="EndEvent_11mlbdj">
+        <dc:Bounds x="2095" y="263" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0r172v3_di" bpmnElement="SequenceFlow_0r172v3">
+        <di:waypoint x="2006" y="281" />
+        <di:waypoint x="2095" y="281" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

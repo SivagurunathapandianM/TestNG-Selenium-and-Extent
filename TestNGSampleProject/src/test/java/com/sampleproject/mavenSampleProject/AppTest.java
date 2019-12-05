@@ -52,7 +52,7 @@ public class AppTest extends TestCase
     ExtentReports extent;
     //helps to generate the logs in test report.
     ExtentTest test;
-    final static String ROOT_URI = "";
+    final static String ROOT_URI = "http://zb-control.sco-dev.caas.swissre.com";
 
     // Run once, e.g. Database connection, connection pool
     @BeforeClass
