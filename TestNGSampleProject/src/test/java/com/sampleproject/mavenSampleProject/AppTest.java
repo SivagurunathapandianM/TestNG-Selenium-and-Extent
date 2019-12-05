@@ -1,6 +1,8 @@
 package com.sampleproject.mavenSampleProject;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,6 +17,8 @@ import io.restassured.http.ContentType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hamcrest.Matchers;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.junit.*;
 import junit.framework.TestCase;
 
@@ -48,7 +52,7 @@ public class AppTest extends TestCase
     ExtentReports extent;
     //helps to generate the logs in test report.
     ExtentTest test;
-    final static String ROOT_URI = "http://zb-control.sco-dev.caas.swissre.com";
+    final static String ROOT_URI = "";
 
     // Run once, e.g. Database connection, connection pool
     @BeforeClass
@@ -158,22 +162,30 @@ public class AppTest extends TestCase
     	LOG.info("Invoking zeebe listofworkflow service vai swagger api ");
     	test = extent.createTest("Testing Zeebe swagger api list of workflow implementation", "PASSED test case");
     	Response response = (Response) get(ROOT_URI + "/listWorkflows");
-    	System.out.println(response.asString());	
+    	LOG.info("GET Rest Assured test response"+response.asString());	
     }
 
 	@Test(description="Rest Assured Post test")  
-	public void post_test() {
+	public void post_test() throws IOException, ParseException {
 		LOG.info("Invoking zeebe Start service vai swagger api ");
 		test = extent.createTest("Testing Zeebe swagger api start workflow implementation", "PASSED test case");
-		String jsonString = "{\"params\": \"{ \"securityDomainDev\": \"true\",\"securityDomainTrain\": \"true\",\"securityDomainProd\": \"true\",\"devenvironment\": \"DEV\",\"iteenvironment\": \"ITE\",\"prodenvironment\": \"PROD\",\"groupName\":\"LoadTEst1\",\"groupPath\":\"OU=Service,OU=CHR,OU=EMEA,OU=Groups\",\"environment\": \"ITE\", \"attributeValues\": \"{\\\"objectClass\\\":\\\"group\\\"}\", \"doFailIfGroupAlreadyExist\":\"false\", \"businessReason\": \"businessReasonStuffGoesHere\", \"catItemSysid\": \"b060754e37bb97c8524144e654990ed9\", \"inputParams\": \"[{\\\"dirx_role_valid_from\\\":\\\"2019-08-15\\\"},{\\\"dirx_role_valid_to\\\":\\\"2099-12-31\\\"},{\\\"dirx_role_is_exception\\\":\\\"false\\\"}]\", \"lineManager\": \"TECAOSSN\", \"parentRequest\": \"RITM05695830\", \"requestedFor\": \"S0MT5F\", \"workplaceID\": \"CHR5XXXX\", \"applicationId\": \"AOS\", \"appPrefix\": \"SCO\", \"privilegedRole\": \"test\",\"riskLevel\": \"test\",\"shortDesc\": \"test\",\"longDesc\": \"test\",\"endorsementRequired\": \"test\",\"needGroups\": \"test\",\"isEDMS\": \"test\",\"isEBPM\": \"test\",\"roleName\": \"test\",\"approvers\": \"test\"}\"}";
+       
+		String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+		String appConfigPath = rootPath + "simple.json";
+		
+	    JSONParser jsonParser = new JSONParser();
+		
+		FileReader reader = new FileReader(appConfigPath);
+		Object obj = jsonParser.parse(reader);
+		
 		Response response = given()
 				.contentType(ContentType.JSON)
 				.accept(ContentType.JSON)
-				.body(jsonString)
+				.body(obj)
 				.when()
 				.post(ROOT_URI + "/workflowInstance/SR_WAS_ROLEMANAGEMENT_P");
 		
-		System.out.println("POST Response\n" + response.asString());
+		LOG.info("POST Service (Start workflow) Rest Assured test response"+response.asString());	
 	}
 	
 	@Test(description="Rest Assured Post test")  
@@ -186,17 +198,21 @@ public class AppTest extends TestCase
 				.post(ROOT_URI + "/deployWorkflow");
 				//.put(ROOT_URI + "/deployWorkflow");
 		
-		System.out.println("POST Response\n" + response.asString());
+		LOG.info("POST Deployment Rest Assured test response"+response.asString());	
 	}
 	@Test
 	public void delete_test() {
+		LOG.info("Invoking zeebe delete workflow service vai swagger api ");
 		Response response = delete(ROOT_URI + "/workflowInstance/2251799814601534");
+		test = extent.createTest("Testing Zeebe swagger api for delete workflow implementation", "PASSED test case");
 		System.out.println(response.asString());
 		System.out.println(response.getStatusCode());
 		// check if id=3 is deleted
 		response = get(ROOT_URI + "/list");
 		System.out.println(response.asString());
 		response.then().body("id", Matchers.not(3));
+		
+		LOG.info("POST Delete Rest Assured test response"+response.asString());	
 	}
     
 

@@ -7,18 +7,12 @@
     <classes>
       <class name="com.sampleproject.mavenSampleProject.AppTest">
         <methods>
-          <include name="testcase2"/>
           <include name="startReport"/>
+          <include name="afterSuite"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
           <include name="testCase6"/>
           <include name="testCase5"/>
-          <include name="testCase1"/>
-          <include name="afterSuite"/>
-          <include name="simple_get_test"/>
-          <include name="test_method_2"/>
-          <include name="post_test"/>
-          <include name="put_test"/>
           <include name="getResult"/>
         </methods>
       </class> <!-- com.sampleproject.mavenSampleProject.AppTest -->

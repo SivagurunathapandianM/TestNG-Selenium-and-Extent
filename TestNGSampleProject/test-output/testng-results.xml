@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="8" failed="0" ignored="0" total="8" passed="0">
+<testng-results skipped="9" failed="0" ignored="0" total="9" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="60" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+  <suite name="Default suite" duration-ms="60" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:19Z">
     <groups>
       <group name="Test2">
         <method signature="AppTest.test_method_2()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="test_method_2" class="com.sampleproject.mavenSampleProject.AppTest"/>
       </group> <!-- Test2 -->
     </groups>
-    <test name="Default test" duration-ms="60" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+    <test name="Default test" duration-ms="60" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:19Z">
       <class name="com.sampleproject.mavenSampleProject.AppTest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="beforeSuite" is-config="true" duration-ms="12" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="beforeSuite" is-config="true" duration-ms="13" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="FAIL" signature="startReport(java.lang.String, java.lang.String)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="startReport" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="FAIL" signature="startReport(java.lang.String, java.lang.String)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="startReport" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:18Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -52,17 +52,59 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReport -->
-        <test-method status="SKIP" signature="post_test()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="post_test" duration-ms="0" started-at="2019-12-03T13:44:39Z" description="Rest Assured Post test" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="delete_test()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="delete_test" duration-ms="0" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:18Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:290)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
+at org.testng.internal.Parameters.createParameters(Parameters.java:620)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.TestRunner.beforeRun(TestRunner.java:529)
+at org.testng.TestRunner.run(TestRunner.java:497)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete_test -->
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="SKIP" signature="post_test()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="post_test" duration-ms="0" started-at="2019-12-04T12:18:18Z" description="Rest Assured Post test" finished-at="2019-12-04T12:18:18Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -90,21 +132,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- post_test -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="put_test()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="put_test" duration-ms="0" started-at="2019-12-03T13:44:39Z" description="Rest Assured Post test" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="put_test()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="put_test" duration-ms="0" started-at="2019-12-04T12:18:18Z" description="Rest Assured Post test" finished-at="2019-12-04T12:18:18Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -132,21 +174,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- put_test -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:18Z" finished-at="2019-12-04T12:18:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="simple_get_test()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="simple_get_test" duration-ms="0" started-at="2019-12-03T13:44:39Z" description="Rest Assured get test" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="simple_get_test()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="simple_get_test" duration-ms="0" started-at="2019-12-04T12:18:18Z" description="Rest Assured get test" finished-at="2019-12-04T12:18:18Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -174,21 +216,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- simple_get_test -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="testCase1()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testCase1" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="testCase1()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testCase1" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -216,21 +258,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase1 -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="testCase5()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testCase5" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="testCase5()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testCase5" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -258,21 +300,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase5 -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="testCase6()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testCase6" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="testCase6()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testCase6" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -300,21 +342,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase6 -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="test_method_2()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="test_method_2" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="test_method_2()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="test_method_2" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -342,21 +384,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_method_2 -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="testcase2()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testcase2" duration-ms="0" started-at="2019-12-03T13:44:39Z" description="This is testcase2" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="testcase2()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="testcase2" duration-ms="0" started-at="2019-12-04T12:18:19Z" description="This is testcase2" finished-at="2019-12-04T12:18:19Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml]]>
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'OS' is required by BeforeTest on method startReport but has not been marked @Optional or defined
-in C:\Users\s9pnqm\AppData\Local\Temp\12\testng-eclipse-616813636\testng-customsuite.xml
+in C:\Users\s9pnqm\AppData\Local\Temp\13\testng-eclipse--977668096\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:290)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
 at org.testng.internal.Parameters.createParameters(Parameters.java:620)
@@ -384,15 +426,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase2 -->
-        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="getResult(org.testng.ITestResult)[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="getResult" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="SKIP" signature="afterTest()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="afterTest()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="SKIP" signature="afterSuite()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-12-03T13:44:39Z" finished-at="2019-12-03T13:44:39Z">
+        <test-method status="SKIP" signature="afterSuite()[pri:0, instance:null(com.sampleproject.mavenSampleProject.AppTest)]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-12-04T12:18:19Z" finished-at="2019-12-04T12:18:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

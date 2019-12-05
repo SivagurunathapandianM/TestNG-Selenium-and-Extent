@@ -1,0 +1,77 @@
+{
+  "id": "e348fce1-7150-4850-bf4a-337c4e0fe793",
+  "version": "2.0",
+  "name": "SamplTestNGProject",
+  "url": "",
+  "tests": [{
+    "id": "125b3d8a-a071-4071-870d-93830e71f4d1",
+    "name": "SwaggerUITest",
+    "commands": [{
+      "id": "fe9073e3-ed49-4a94-8351-8d851a021be2",
+      "comment": "",
+      "command": "open",
+      "target": "/swagger-ui.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f4d48fc-1fb2-40fc-a911-18e1316773b7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x838",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1ae431a-6683-4290-8ed9-5f61e642c001",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Workflow",
+      "targets": [
+        ["linkText=Workflow", "linkText"],
+        ["css=#resource_Workflow h2 > .toggleEndpointList", "css:finder"],
+        ["xpath=//a[contains(text(),'Workflow')]", "xpath:link"],
+        ["xpath=//li[@id='resource_Workflow']/div/h2/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#!/Workflow')]", "xpath:href"],
+        ["xpath=//h2/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Workflow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9943fc34-c762-4dd6-af68-f60a9f62ba80",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=/listWorkflows",
+      "targets": [
+        ["linkText=/listWorkflows", "linkText"],
+        ["css=#Workflow_listWorkflows .path > .toggleOperation", "css:finder"],
+        ["xpath=//a[contains(text(),'/listWorkflows')]", "xpath:link"],
+        ["xpath=//li[@id='Workflow_listWorkflows']/div/h3/span[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#!/Workflow/listWorkflows')])[2]", "xpath:href"],
+        ["xpath=//li[2]/ul/li/div/h3/span[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'/listWorkflows')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9caf537b-4d59-4e4b-9c2d-348dfcacdb3c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#Workflow_listWorkflows_content .submit",
+      "targets": [
+        ["css=#Workflow_listWorkflows_content .submit", "css:finder"],
+        ["xpath=(//input[@value='Try it out!'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='Workflow_listWorkflows_content']/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/ul/li/div[2]/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "dc4cb077-95b0-47c1-af73-c02b74455929",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["125b3d8a-a071-4071-870d-93830e71f4d1"]
+  }],
+  "urls": ["http://zb-control.sco-dev.caas.swissre.com/"],
+  "plugins": []
+}

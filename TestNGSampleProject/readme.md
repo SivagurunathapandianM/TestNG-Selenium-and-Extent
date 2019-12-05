@@ -1,10 +1,21 @@
 # Summary
 
-* selenium (E2E UI testing) is a tool to automate web application testing : URL: https://selenium.dev/ 
+* selenium (E2E UI testing) is a tool to automate web application testing :
+			 URL: https://selenium.dev/, https://selenium.dev/downloads/   
+```text
+		Selenium webdriver  : Selenium WebDriver drives a browser natively, as a real user would, either locally or on remote machines.
+		Selenium IDE		: Selenium IDE is a Chrome and Firefox extension that makes it easy to record and playback tests in the browser.
+		Selenium Grid		: Selenium Grid takes WebDriver to another level by running tests on many machines at the same time, cutting down on the time it takes to test on multiple browsers and operating systems.
+		
+		
+```
+
 * RestAssured:
+```text
        (http://rest-assured.io/) : Testing and validating REST services in Java
 		https://github.com/rest-assured/rest-assured/wiki/GettingStarted
 		https://www.journaldev.com/21501/rest-assured-tutorial
+```
   
 * TestNG is testing framework to faciliate selenium to use organised way of testing
 * extent report is a reporting framework to be integrated with selenium for graphical respresentation. 
@@ -141,5 +152,8 @@ Two facts i want to mentioned that i learnt from my experience, SonarLint will n
 # Include sample Azure Pipeline yaml file with the project 
 
  Path : src/test/resources
+ 
+ 
+ 
  
  

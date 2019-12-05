@@ -9,6 +9,7 @@
           <include name="startReport"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
+          <include name="delete_test"/>
           <include name="testCase6"/>
           <include name="testCase5"/>
           <include name="testCase1"/>

@@ -30,7 +30,7 @@ public class SeleniumTest {
                                                 
                                                 System.setProperty("webdriver.gecko.driver", "\\H:\\geckodriver.exe");
                                                 Thread.sleep(3000);
-                                                String ENV = "https://swissretest.service-now.com";
+                                                String ENV = "";
                                                 //System.setProperty("webdriver.ie.driver", "\\H:\\IEDriverServer.exe");
                                                 
                                                 driver.get(ENV);
