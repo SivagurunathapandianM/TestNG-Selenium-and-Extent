@@ -6,8 +6,15 @@
 		Selenium webdriver  : Selenium WebDriver drives a browser natively, as a real user would, either locally or on remote machines.
 		Selenium IDE		: Selenium IDE is a Chrome and Firefox extension that makes it easy to record and playback tests in the browser.
 		Selenium Grid		: Selenium Grid takes WebDriver to another level by running tests on many machines at the same time, cutting down on the time it takes to test on multiple browsers and operating systems.
+		FireBug and FirePath : 
+		Firebug is a free and open source Web Browser extension or developer tool for Mozilla Firefox. This can be used to debug and edit any web application opened in the browser.
 		
 		
+		http://testingpool.com/usage-of-developer-tools-firebug-and-firepath/
+		
+		
+Copied Selenium standalone server in the src/test/resources folder:
+	- (java -jar selenium-server-standalone-3.141.59.jar), Command is used to Run selenium standalone server
 ```
 
 * RestAssured:
