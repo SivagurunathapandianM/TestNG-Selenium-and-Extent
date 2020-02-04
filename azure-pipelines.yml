@@ -10,7 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
+- script: 
+    echo Hello, world!
+    echo $(System.DefaultWorkingDirectory)
   displayName: 'Run a one-line script'
 
 - script: |
@@ -21,7 +23,7 @@ steps:
 - task: Maven@3
   displayName: Build function
   inputs:
-    mavenPomFile: 'TestNG-Selenium-and-Extent/TestNGSampleProject/pom.xml'
+    mavenPomFile: '$(System.DefaultWorkingDirectory)/TestNG-Selenium-and-Extent/TestNGSampleProject/pom.xml'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
