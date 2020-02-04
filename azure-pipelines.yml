@@ -23,7 +23,7 @@ steps:
 - task: Maven@3
   displayName: Build function
   inputs:
-    mavenPomFile: '$(System.DefaultWorkingDirectory)/TestNG-Selenium-and-Extent/TestNGSampleProject/pom.xml'
+    mavenPomFile: '$(System.DefaultWorkingDirectory)/TestNGSampleProject/pom.xml'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
