@@ -21,7 +21,7 @@ steps:
 - task: Maven@3
   displayName: Build function
   inputs:
-    mavenPomFile: $(mavenPomFile)
+    mavenPomFile: 'TestNG-Selenium-and-Extent/pom.xml'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
